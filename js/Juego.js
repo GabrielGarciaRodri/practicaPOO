@@ -22,4 +22,9 @@ export class Juego {
             }
         }
     }
+
+    loguear(mensaje){
+        this.agregarEventoAlHistorial(mensaje); 
+        console.log(mensaje);
+    }
 }
