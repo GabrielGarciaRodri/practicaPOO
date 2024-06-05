@@ -1,6 +1,7 @@
 export class Juego {
     constructor(){
         this.historial = [];
+        this.logLevel = "info"; //Login principal pero no se para que por ahora (no olvidar) xd
     }
 
     iniciarJuego(){
@@ -24,7 +25,9 @@ export class Juego {
     }
 
     loguear(mensaje){
-        this.agregarEventoAlHistorial(mensaje); 
-        console.log(mensaje);
+        if(nivel <= this.logLevel){
+            this.agregarEventoAlHistorial(mensaje); 
+            console.log(mensaje);
+        }
     }
 }

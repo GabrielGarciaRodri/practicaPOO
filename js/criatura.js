@@ -38,3 +38,23 @@ export class Criatura{
     
 }
 
+function atacar(heroe, enemigo) {
+    const daño = heroe.ataque - enemigo.defensa;
+    if (daño > 0) {
+      enemigo.recibirDaño(daño);
+      juego.loguear(`${heroe.nombre} ataca a ${enemigo.nombre} y le causa ${daño} de daño.`, "info"); 
+    } else {
+      juego.loguear(`${heroe.nombre} ataca a ${enemigo.nombre} pero no causa daño.`, "info");
+    }
+}
+
+function recibirDaño(criatura, daño) {
+    criatura.vida -= daño;
+    if (criatura.vida <= 0) {
+      criatura.vida = 0;
+      juego.loguear(`${criatura.nombre} ha sido derrotado!`, "warning"); 
+    } else {
+      juego.loguear(`${criatura.nombre} recibe ${daño} de daño.`, "info"); 
+    }
+}
+
