@@ -1,4 +1,4 @@
-import { Criatura } from "./criatura.js";
+import { Criatura } from "./Criatura.js";
 
 export class Heroe extends Criatura {
     constructor(nombre, vida, vidaMaxima, ataque, defensa, habilidadEspecial){
